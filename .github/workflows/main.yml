@@ -2,7 +2,7 @@ name: MIUI 小米社区自动任务
 
 on:
   schedule:
-    - cron: '0 2 * * *'        # 每天北京时间 10:00 运行（UTC+8）
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,12 @@ jobs:
       - name: 安装项目依赖
         run: pdm install
 
-      - name: 配置 config.yaml
+      # 先让脚本自动生成 config.yaml
+      - name: 生成默认 config.yaml
+        run: pdm run python miuitask.py --help || true   # 触发生成配置文件
+
+      # 然后覆盖关键配置（更安全，缩进由这里控制）
+      - name: 配置账号信息
         run: |
           cat > data/config.yaml << 'EOF'
           preference:
