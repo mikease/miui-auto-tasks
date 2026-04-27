@@ -41,13 +41,13 @@ jobs:
               login_user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
               user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
               CheckIn: false                    # 先关闭签到，避免验证码
-              BrowseUserPage: false
+              BrowseUserPage: true
               BrowsePost: true
-              ThumbUp: false
-              BrowseSpecialPage: false
-              BoardFollow: false
-              CarrotPull: false                 # 拔萝卜风险高，建议关闭
-              WxSign: false
+              ThumbUp: true
+              BrowseSpecialPage: true
+              BoardFollow: true
+              CarrotPull: true                 # 拔萝卜风险高，建议关闭
+              WxSign: true
 
           ONEPUSH:
             notifier: pushplus
