@@ -1,0 +1,55 @@
+preference:
+    geetest_url: ''
+    geetest_method: post
+    geetest_params: {}
+    geetest_data: {}
+    geetest_validate_path: $.data.validate
+    geetest_challenge_path: $.data.challenge
+    geetest_result_path: $
+    get_geetest_url: ''
+    get_geetest_method: post
+    get_geetest_params: {}
+    get_geetest_data: {}
+    get_geetest_validate_path: $
+    get_geetest_challenge_path: $
+    get_geetest_try_count: 20
+accounts:
+-   uid: '2175138938'
+    password: 134910ED0E02CE25A93906615EEEB504
+    cookies:
+        uLocale: zh_CN
+        deviceId: wb_d48edaf2-e05f-4691-b2ea-019f1a1623fc
+        pass_ua: web
+        passInfo: login-end
+        passToken: V1:DXmurwq2/R1BHTELu6obCevM0Ts160w/HIIjvd06lpdVeuOzgv4QDgHrv8ZmrLRjzf9bE4u9FHkqfha2mQ5rTUOdp+1FSnApiK4QhjlScKvE59uES9khZjSBkSi1md2Fy+jZJ5FSjW8UmsYM4/Eek609fgyBTsGdJs/GcZr07e0dWzuUtO96y3Mjmb1NRmcuu7gNZrm+oSXQy24lYVtidg+ydNPBsdhmosikwkxcUjpACK/TQXrtg0nqYeYi2Jp6KfzVA+vPmyBhYo4AJ/ZZVWiroEiWIWGwu1KJRXm/vtMg1vIDGgBKBrr4k6Tyu0hYuHeOyHfibunulByv9PuVBA==
+        cUserId: 71RYawol79pnwb0n9t9_LOisZXs
+        userId: '2175138938'
+        serviceToken: 2.0&V1_passport&1:j1PhmPgV18rEu7r_QLb5NQ:LbAlyf0LbW5Ajn36jjvhRBDcwEPa8QFAY75cbOMvxzUZGXsXpt+7jm1gQ7KSndx3O2aV2trlWfgxY8Kx2ZJakDzfH1EVoB4PEinXnRj9ZxmhZrghTa+4HxW6qUJiP5sYxZkWOUExcvFquVTrOsUhjXaio/kNBedh5LVjUKYfmfWNguQ/cKerYUnCF/7TgLtXd1meBPS+jkRtH5FUJmk6CUXX3uWuKTDMtQ/yqPe+rpbGd7pUVvyVV6IM4Jcmp1z233d4Yp5/d4MZi5T9SJ/GNyrQjduWgI8MMwwKWc7FdrPyjhXAjsFuEEkXibyBeWqXUa9rJclgn+XOq7vDH3Ty48ftBLvXJj66SqBGJoMYxeM=&kt0dfBhCwuohAhghECUW1g==
+        passport_slh: yIBCvuBQ9KEDwJ7EZuWwjyG9o4o=
+        passport_ph: gnV3lZZYDc4I/3W73/dfow==
+        sns_bind_ph: cp2GZVdk3qn3luR5SuujmhMXi/Ub3MgTHB4122wuGLwFQLsxCqLivCfZ6kWpEHox
+        miui_vip_a_serviceToken: CZM6IH4uE3KzaaxjaylU+zCnOgxRDvachXiLCXcbCC9jhKLdFgUsbk9//BSSLEgVklQY6suDTju0H3cIMTH+1o6bIDRx9IoIsxDW536rUEyrP8yyHcU+RFWkT1D7cj5uFBoRqfIo7yHUq/JgQxU8aYoTfE64F2Ux85RTVMoQYteeKXyNIcX8zn1RAx3tsCIZfO8KvUP5CSx6ZTfOl2flcOxdcvOc13Zl/ZM/jo9CRRfA1XFQ/r/K20nBQLvUKG6V9aNbktlT0L5QkPAKCBdi+eytNk4FlkQkw2iGJoh/sJ0=
+        miui_vip_a_slh: K42osiQBActYv1stLuB0f4DZzNs=
+        miui_vip_a_ph: jhQZYGfBtnIZRcjUU5rGog==
+    login_user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+    user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+    device: ''
+    device_model: ''
+    CheckIn: false
+    BrowseUserPage: true
+    BrowsePost: true
+    BrowseVideoPost: true
+    ThumbUp: true
+    BrowseSpecialPage: true
+    BoardFollow: true
+    CarrotPull: true
+    WxSign: true
+ONEPUSH:
+    notifier: 'pushplus'
+    params:
+        title: 'Mi任务'
+        markdown: true
+        token: '1026c7ef80d94f1e920cd888f0d28e97'
+        userid: '舒安'
