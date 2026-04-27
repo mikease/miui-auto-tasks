@@ -38,13 +38,15 @@ jobs:
               password: '${{ secrets.MIUI_PASSWORD }}'
               cookies: '${{ secrets.MIUI_COOKIES }}'
               user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36'
-              CheckIn: true
-              BrowseUserPage: false
-              BrowsePost: false
-              ThumbUp: false
-              BrowseSpecialPage: false
-              BoardFollow: false
-              CarrotPull: false
+          CheckIn: false
+          BrowseUserPage: true
+          BrowsePost: true
+          BrowseVideoPost: true
+          ThumbUp: true
+          BrowseSpecialPage: true
+          BoardFollow: true
+          CarrotPull: true
+          WxSign: true
           ONEPUSH:
             notifier: serverchanturbo
             params:
