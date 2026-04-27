@@ -3,7 +3,7 @@ name: MIUI 小米社区自动任务
 on:
   schedule:
     - cron: '0 2 * * *'        # 每天北京时间 10:00 运行（UTC+8）
-  workflow_dispatch:           # 支持手动触发
+  workflow_dispatch:
 
 jobs:
   miui-task:
@@ -40,14 +40,13 @@ jobs:
               cookies: '${{ secrets.MIUI_COOKIES }}'
               login_user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
               user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
-              CheckIn: false                    # 先关闭签到，避免验证码
-              BrowseUserPage: true
+              CheckIn: false
+              BrowseUserPage: false
               BrowsePost: true
-              ThumbUp: true
-              BrowseSpecialPage: true
-              BoardFollow: true
-              CarrotPull: true                 # 拔萝卜风险高，建议关闭
-              WxSign: true
+              ThumbUp: false
+              BrowseSpecialPage: false
+              BoardFollow: false
+              CarrotPull: false
 
           ONEPUSH:
             notifier: pushplus
