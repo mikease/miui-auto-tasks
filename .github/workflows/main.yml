@@ -37,7 +37,10 @@ jobs:
             - uid: '${{ secrets.MIUI_UID }}'
               password: '${{ secrets.MIUI_PASSWORD }}'
               cookies: '${{ secrets.MIUI_COOKIES }}'
-              user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36'
+              login_user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+              user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+          like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
           CheckIn: false
           BrowseUserPage: true
           BrowsePost: true
@@ -48,10 +51,12 @@ jobs:
           CarrotPull: true
           WxSign: true
           ONEPUSH:
-            notifier: serverchanturbo
+            notifier: pushplus
             params:
               title: MIUI任务通知
-              sctkey: ${{ secrets.SCTKEY }}
+              markdown: true
+              token: ${{ secrets.TOKEN }}
+              userid: '舒安'
           EOF
 
       - name: 运行小米社区签到任务
