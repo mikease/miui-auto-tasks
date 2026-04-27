@@ -55,7 +55,7 @@ jobs:
             params:
               title: MIUI任务通知
               markdown: true
-              token: ${{ secrets.TOKEN }}
+              token: '${{ secrets.TOKEN }}'
               userid: '舒安'
           EOF
 
