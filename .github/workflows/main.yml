@@ -2,8 +2,8 @@ name: MIUI 小米社区自动任务
 
 on:
   schedule:
-    - cron: '0 2 * * *'      # 每天北京时间 10:00 运行（UTC+8）
-  workflow_dispatch:         # 支持手动点击运行
+    - cron: '0 2 * * *'        # 每天北京时间 10:00 运行（UTC+8）
+  workflow_dispatch:           # 支持手动触发
 
 jobs:
   miui-task:
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 安装 pdm（推荐方式）
+      - name: 安装 pdm
         run: |
           python -m pip install --upgrade pip
           pip install pdm
@@ -26,43 +26,41 @@ jobs:
       - name: 安装项目依赖
         run: pdm install
 
-      - name: 配置 config.yaml（方式一：从 Secrets 生成，推荐）
+      - name: 配置 config.yaml
         run: |
           cat > data/config.yaml << 'EOF'
           preference:
             geetest_url: ''
             geetest_params: {}
             geetest_data: {}
+
           accounts:
             - uid: '${{ secrets.MIUI_UID }}'
               password: '${{ secrets.MIUI_PASSWORD }}'
               cookies: '${{ secrets.MIUI_COOKIES }}'
-              login_user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-          (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
-              user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-          like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
-          CheckIn: false
-          BrowseUserPage: true
-          BrowsePost: true
-          BrowseVideoPost: true
-          ThumbUp: true
-          BrowseSpecialPage: true
-          BoardFollow: true
-          CarrotPull: true
-          WxSign: true
+              login_user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
+              user_agent: 'Mozilla/5.0 (Linux; Android 13; SM-S9110) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
+              CheckIn: false                    # 先关闭签到，避免验证码
+              BrowseUserPage: false
+              BrowsePost: true
+              ThumbUp: false
+              BrowseSpecialPage: false
+              BoardFollow: false
+              CarrotPull: false                 # 拔萝卜风险高，建议关闭
+              WxSign: false
+
           ONEPUSH:
             notifier: pushplus
             params:
               title: MIUI任务通知
               markdown: true
               token: '${{ secrets.TOKEN }}'
-              userid: '舒安'
           EOF
 
       - name: 运行小米社区签到任务
         run: pdm run python miuitask.py
 
-      - name: 上传运行日志（可选，便于查看结果）
+      - name: 上传运行日志
         uses: actions/upload-artifact@v4
         if: always()
         with:
